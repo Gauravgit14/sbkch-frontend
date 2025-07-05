@@ -1,0 +1,100 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBKCH - Project Gaurav</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li class="logo">SBKCH.COM</li>
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-content">
+            <li><a href="#">💬 Instant analytics with AI</a></li>
+            <li><a href="#">📈 Live visitor tracking</a></li>
+            <li><a href="#">📍 Peak engagement time detection</a></li>
+            <li><a href="#">🎯 Ad performance breakdown</a></li>
+            <li><a href="#">🤖 AI campaign tips</a></li>
+            <li><a href="#">⚙️ Easy installation</a></li>
+            <li><a href="#">🧾 Flexible plans</a></li>
+            <li><a href="#">📊 Easy Dashboard</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Learning</a>
+          <ul class="dropdown-content">
+            <li><a href="#">KAM Interview</a></li>
+            <li><a href="#">Data Analyst Interview</a></li>
+            <li><a href="#">Real Time Analyst</a></li>
+            <li><a href="#">WFM Interview</a></li>
+            <li><a href="#">SDE Interview</a></li>
+            <li><a href="#">Web Dev Interview</a></li>
+            <li><a href="#">Prompt Engineer Interview</a></li>
+            <li><a href="#">Data Scientist Interview</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="privacy.html">Privacy and Policy</a></li>
+        <li><a href="login.html" class="login-btn">Login/Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>"Let's make a better tomorrow</h1>
+      <p>Analytics is so easy, even a fruit seller can understand it.</p>
+    </section>
+
+    <div id="chatbot">
+      <div class="chatbox" id="chatbox"></div>
+      <input type="text" id="chatInput" placeholder="Type here..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <form id="callback-form">
+        <label for="callback-phone">Raise a callback request:</label>
+        <select id="country-code">
+          <option value="91">+91 (India)</option>
+          <option value="1">+1 (USA)</option>
+          <!-- Add more codes as needed -->
+        </select>
+        <input type="text" id="callback-phone" placeholder="10-digit phone" maxlength="10" />
+        <input type="text" id="callback-issue" placeholder="Your issue..." />
+        <button type="submit">Submit</button>
+      </form>
+      <div class="social-icons">
+        <a href="#">📘 Facebook</a>
+        <a href="#">🐦 Twitter</a>
+        <a href="#">❌ X</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">▶️ YouTube</a>
+      </div>
+      <p class="footer-note">© 2025 SBKCH.COM </p>
+    </div>
+  </footer>
+  <!-- Chatbot Toggle Button -->
+<button id="chat-toggle">💬 Chat with Us</button>
+
+<!-- Chatbot Interface -->
+<div id="chatbot" class="chatbot-container">
+  <div class="chatbox" id="chatbox"></div>
+  <input type="text" id="chatInput" placeholder="Type here..." />
+  <button onclick="sendMessage()">Send</button>
+  <button id="end-chat">End Chat</button>
+</div>
+
+</body>
+</html>

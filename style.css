@@ -1,0 +1,200 @@
+/* ========== GENERAL ========== */
+body {
+  font-family: 'Explora', cursive;
+  background: #fdf6f0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h3, p {
+  font-family: 'Explora', cursive;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background: #212529;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  font-size: 18px;
+}
+
+/* ========== DROPDOWN ========== */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 220px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  padding: 12px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ========== CHAT TOGGLE BUTTON ========== */
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-family: 'Explora', cursive;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: background 0.3s ease;
+}
+
+#chat-toggle:hover {
+  background-color: #218838;
+}
+
+/* ========== CHATBOT CONTAINER ========== */
+.chatbot-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  max-height: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.chatbot-container.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ========== FOLD ANIMATION FOR END CHAT ========== */
+@keyframes foldAndClose {
+  0% {
+    transform: scaleY(1) rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+.chatbot-container.closing {
+  animation: foldAndClose 0.6s ease forwards;
+  transform-origin: top;
+}
+
+/* ========== CHATBOX AND MESSAGES ========== */
+.chatbox {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+  font-family: 'Explora', cursive;
+}
+
+.message {
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 15px;
+  max-width: 85%;
+  font-size: 17px;
+  word-wrap: break-word;
+}
+
+.bot {
+  background-color: #e0f7fa;
+  align-self: flex-start;
+}
+
+.user {
+  background-color: #c8e6c9;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* ========== INPUT AND BUTTONS ========== */
+#chatInput {
+  width: 65%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Explora', cursive;
+  margin: 10px;
+}
+
+button[onclick="sendMessage()"], #end-chat {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Explora', cursive;
+  cursor: pointer;
+  margin: 10px 5px;
+}
+
+button[onclick="sendMessage()"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[onclick="sendMessage()"]:hover {
+  background-color: #0056b3;
+}
+
+#end-chat {
+  background-color: #dc3545;
+  color: white;
+}
+
+#end-chat:hover {
+  background-color: #c82333;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #212529;
+  color: white;
+  padding: 20px;
+  font-family: 'Explora', cursive;
+  text-align: center;
+}
+
+.footer-content a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-content a:hover {
+  color: white;
+}
