@@ -83,7 +83,7 @@ function sendMessage() {
       })
         .then(res => res.json())
         .then(data => {
-          if (data.success) {
+          if (data.complaintId) {
             complaintId = data.complaintId;
             addMessage(`✅ Issue submitted!`);
             addMessage(`🆔 Complaint ID: ${complaintId}`);
