@@ -131,3 +131,37 @@ function sendMessage() {
 
   input.value = "";
 }
+    const chat = document.getElementById("chat");
+
+    function appendMessage(sender, text) {
+      const div = document.createElement("div");
+      div.className = `message ${sender}`;
+      div.innerText = text;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function sendMessage() {
+  const input = document.getElementById("input");
+  const question = input.value.trim();
+  if (!question) return;
+
+  appendMessage("user", question);
+  input.value = "";
+
+  appendMessage("bot", "Thinking...");
+
+  try {
+    const res = await axios.post("https://sbkch-backend.onrender.com/chat", {
+      question,
+    });
+
+    chat.removeChild(chat.lastChild); // Remove "Thinking..." message
+
+    // ✅ ADDED: Show fallback if answer missing
+    appendMessage("bot", res.data?.answer || "⚠️ Something went wrong. Please try again.");
+  } catch {
+    chat.removeChild(chat.lastChild);
+    appendMessage("bot", "❌ Server error. Please try again later."); // ✅ ADDED: clearer fallback
+  }
+}
