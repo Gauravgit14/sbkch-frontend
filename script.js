@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 const chatToggle = document.getElementById("chat-toggle");
 const chatbotContainer = document.getElementById("chatbot");
 const chatbox = document.getElementById("chatbox");
@@ -76,7 +78,7 @@ function sendMessage() {
       issueInput = text;
       addMessage("📨 Submitting your issue...");
 
-      fetch("https://sbkch-backend.onrender.com/send", {
+      fetch("https://sbkch-backend.onrender.com/send",{
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: nameInput, email: emailInput, phone: phoneInput, issue: issueInput })
