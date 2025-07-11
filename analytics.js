@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const chat = document.getElementById("chat");
   const input = document.getElementById("input");
-  const sendButton = document.querySelector("button");
+  const sendButton = document.getElementById("send-btn"); // ✅ safer & specific
 
   function appendMessage(sender, text) {
     const div = document.createElement("div");
